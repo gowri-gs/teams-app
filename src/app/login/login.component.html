@@ -1,0 +1,19 @@
+<section class="login">
+    <div class="login_box">
+        <div class="left">
+            <div class="contact">
+                <form [formGroup] = "userDetails">
+                    <h3 class="text-center">SIGN IN</h3>
+                    <input formControlName="username" type="text" placeholder="abc@example.com">
+                    <span *ngIf="userDetails.get('username')?.status=='INVALID' && usernameInvalid" class="text-danger">User Name is mandatory</span>
+                    <input formControlName="password" type="password" placeholder="">
+                    <span *ngIf="userDetails.get('password')?.status=='INVALID' && passwordInvalid" class="text-danger">Password is mandatory</span>
+                    <button (click)="login()" class="submit">LET'S GO</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <img src="assets/images/undraw_remotely_-2-j6y.svg" alt="">
+        </div>
+    </div>
+</section>
